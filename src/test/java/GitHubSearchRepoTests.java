@@ -5,14 +5,17 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.platform.suite.api.Suite;
+import test.extension.TestLogExtension;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 
+@ExtendWith(TestLogExtension.class)
 @DisplayName("Определение табов в репозитории")
 public class GitHubSearchRepoTests extends GitHUBTestConfiguration {
 
