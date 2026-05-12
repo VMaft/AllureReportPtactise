@@ -10,9 +10,9 @@ jobs:
 
       - uses: actions/setup-java@v4
         with:
-          distribution: 'eclipse'
+          distribution: 'temurin'
           java-version: '17'
 
       - run: ./gradlew clean test
 
-      - run: bats -v
+      - run: bats -
