@@ -13,6 +13,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - run: ./gradlew clean test
+      - name: Make gradlew executable
+        run: chmod +x gradlew
 
-      - run: bats -
+      - name: Run tests
+        run: ./gradlew clean test
+
+      - run: bats -v
