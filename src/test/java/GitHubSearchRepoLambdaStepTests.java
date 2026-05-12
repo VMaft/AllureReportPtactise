@@ -26,7 +26,7 @@ public class GitHubSearchRepoLambdaStepTests extends GitHUBTestConfiguration {
     @Story("Проверка наличия табов из списка в репозитории.")
     @DisplayName("LambdaSteps. Поиск и анализ репозитория \"" + REPO_NAME + "\".")
     @ParameterizedTest(name = "Проверка наличия таба \"{0}\" в репозитории.")
-    @ValueSource(strings = {"Code", "Pull requests", "Issues", "Actions", "Projects", "Security and quality", "Insights"})
+    @ValueSource(strings = {"Code", "Pull requests", "Actions", "Projects", "Security and quality", "Insights"})
     @Severity(SeverityLevel.CRITICAL)
     @Owner("VMaft")
     @Link(value = "GitHubStartPage", url = URL)

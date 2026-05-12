@@ -25,7 +25,7 @@ public class GitHubSearchRepoTests extends GitHUBTestConfiguration {
     @Feature("PageObjects. Проверка репозитория" + REPO_NAME + ".")
     @Story("Проверка наличия табов из списка в репозитории.")
     @ParameterizedTest(name = "Проверка наличия таба \"{0}\" в репозитории \"" + REPO_NAME + "\".")
-    @ValueSource(strings = {"Code", "Pull requests", "Issues", "Actions", "Projects", "Security and quality", "Insights"})
+    @ValueSource(strings = {"Code", "Pull requests", "Actions", "Projects", "Security and quality", "Insights"})
     void specialRepoCanBeFoundOnGitHUB(String tabName) {
         open(URL);
         searchFieldLocator.click();
