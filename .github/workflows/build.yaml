@@ -1,6 +1,6 @@
-name: "Testing of github workflow CI opportunities."
+name: "Testing of github actions workflow"
 
-on: [ push ]
+on: [push, workflow_dispatch]
 
 jobs:
   test:
@@ -28,8 +28,7 @@ jobs:
         run: |
           export DISPLAY=:99
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-          ./gradlew clean test -Dselenide.headless=true
-
+          ./gradlew clean test -Dselenide.headless=
       - name: Upload reports
         if: always()
         uses: actions/upload-artifact@v4
