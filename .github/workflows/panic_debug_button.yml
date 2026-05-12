@@ -1,9 +1,12 @@
 name: "Diagnostic Echo"
 
 on:
-  workflow_dispatch:  [workflow_dispatch]
-  pull_request:
-    paths: ['.github/workflows/**.yaml']  # Автоматически при изменении workflow
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Причина запуска'
+        required: false
+        default: 'Manual run'
 
 jobs:
   diagnose:
@@ -41,4 +44,3 @@ jobs:
           echo "Ref: ${{ github.ref }}"
           echo "Actor: ${{ github.actor }}"
           echo "Event: ${{ github.event_name }}"
-          
