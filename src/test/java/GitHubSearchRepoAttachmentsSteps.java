@@ -6,15 +6,14 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.api.extension.ExtendWith;
+import test.extension.TestLogExtension;
 
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.attachment;
 import static io.qameta.allure.Allure.step;
 
+@ExtendWith(TestLogExtension.class)
 @DisplayName("Практика по аттачментам")
 public class GitHubSearchRepoAttachmentsSteps extends GitHUBTestConfiguration {
 
