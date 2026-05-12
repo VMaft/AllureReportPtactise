@@ -20,7 +20,7 @@ public class GitHubSearchRepoWebSteps extends GitHUBTestConfiguration {
     @Feature("WebSteps. Проверка репозитория.")
     @Story("Проверка наличия табов из списка в репозитории.")
     @ParameterizedTest()
-    @ValueSource(strings = {"Code","Pull requests", "Actions","Projects","Security and quality","Insights"})
+    @ValueSource(strings = {"Code", "Pull requests", "Actions","Projects","Security and quality","Insights"})
     @Severity(SeverityLevel.BLOCKER)
     @Owner("VMaft")
     @Link(value = "GitHubStartPage", url = URL)
