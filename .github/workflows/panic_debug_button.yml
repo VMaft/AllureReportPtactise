@@ -1,9 +1,44 @@
-name: Minimal Test
+name: "Diagnostic Echo"
 
-on: [push]
+on:
+  workflow_dispatch:  [workflow_dispatch]
+  pull_request:
+    paths: ['.github/workflows/**.yaml']  # Автоматически при изменении workflow
 
 jobs:
-  test:
+  diagnose:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello there! Workflow is working!"
+      - name: Системная информация
+        run: |
+          echo "=== ОС и окружение ==="
+          uname -a
+          echo "=== Текущая директория ==="
+          pwd
+          ls -la
+
+      - name: Информация о Git
+        run: |
+          echo "=== Ветка и коммит ==="
+          git branch
+          git log -1 --oneline
+          echo "=== Удалённые репозитории ==="
+          git remote -v
+
+      - name: Версии инструментов
+        run: |
+          echo "=== Java ==="
+          java -version 2>&1 || echo "Java not found"
+          echo "=== Gradle ==="
+          ./gradlew --version || echo "Gradle wrapper not found"
+          echo "=== Bats ==="
+          bats -v || echo "Bats not installed"
+
+      - name: Переменные окружения GitHub
+        run: |
+          echo "=== GitHub контекст ==="
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Event: ${{ github.event_name }}"
+          
