@@ -27,7 +27,8 @@ public class GitHubSearchRepoTests extends GitHUBTestConfiguration {
     @Epic("Совершенно обычные параметризированные тесты.")
     @Feature("PageObjects. Проверка репозитория" + REPO_NAME + ".")
     @Story("Проверка наличия табов из списка в репозитории.")
-    @ParameterizedTest(name = "Проверка наличия таба \"{0}\" в репозитории \"" + REPO_NAME + "\".")
+    @DisplayName("Проверка наличия в репозитории \"" + REPO_NAME + "\".")
+    @ParameterizedTest(name = "Таба \"{0}\" ")
     @ValueSource(strings = {"Code", "Pull requests", "Actions", "Projects", "Security and quality", "Insights"})
     void specialRepoCanBeFoundOnGitHUB(String tabName) {
         open(URL);

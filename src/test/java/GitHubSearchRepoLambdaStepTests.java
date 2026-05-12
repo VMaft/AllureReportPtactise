@@ -25,9 +25,9 @@ public class GitHubSearchRepoLambdaStepTests extends GitHUBTestConfiguration {
     }
 
     @Epic("Тесты с применением LambdaSteps")
-    @Feature("LambdaSteps. Проверка репозитория" + REPO_NAME + ".")
+    @Feature("LambdaSteps. Проверка табов репозитория" + REPO_NAME + ".")
     @Story("Проверка наличия табов из списка в репозитории.")
-    @DisplayName("LambdaSteps. Поиск и анализ репозитория \"" + REPO_NAME + "\".")
+    @DisplayName("LambdaSteps.")
     @ParameterizedTest(name = "Проверка наличия таба \"{0}\" в репозитории.")
     @ValueSource(strings = {"Code", "Pull requests", "Actions", "Projects", "Security and quality", "Insights"})
     @Severity(SeverityLevel.CRITICAL)

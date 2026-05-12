@@ -22,6 +22,7 @@ public class GitHubSearchRepoWebSteps extends GitHUBTestConfiguration {
     @Epic("Тесты с использованием WebSteps")
     @Feature("WebSteps. Проверка репозитория.")
     @Story("Проверка наличия табов из списка в репозитории.")
+    @DisplayName("WebSteps. ")
     @ParameterizedTest(name = "Проверка наличия таба \"{0}\" в репозитории.")
     @ValueSource(strings = {"Code", "Pull requests", "Actions", "Projects","Security and quality","Insights"})
     @Severity(SeverityLevel.BLOCKER)
