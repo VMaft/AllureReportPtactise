@@ -18,6 +18,7 @@ dependencies {
             'io.qameta.allure:allure-selenide:2.34.0'
     )
     testImplementation ('org.junit.platform:junit-platform-suite:1.11.0')
+    testImplementation("org.assertj:assertj-core:4.0.0-M1")
 }
 
 test {
