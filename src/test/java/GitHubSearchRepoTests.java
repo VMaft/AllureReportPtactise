@@ -8,7 +8,6 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.platform.suite.api.Suite;
 import test.extension.TestLogExtension;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -29,7 +28,7 @@ public class GitHubSearchRepoTests extends GitHUBTestConfiguration {
     @Story("Проверка наличия табов из списка в репозитории.")
     @DisplayName("Проверка наличия в репозитории \"" + REPO_NAME + "\".")
     @ParameterizedTest(name = "Таба \"{0}\" ")
-    @ValueSource(strings = {"Code", "Pull requests", "Actions", "Projects", "Security and quality", "Insights"})
+    @ValueSource(strings = {"Code", "Pull requests", "Issues", "Actions", "Projects", "Security and quality", "Insights"})
     void specialRepoCanBeFoundOnGitHUB(String tabName) {
         open(URL);
         searchFieldLocator.click();
@@ -37,4 +36,6 @@ public class GitHubSearchRepoTests extends GitHUBTestConfiguration {
         keyRepositoryLinkLocator.click();
         $(byAttribute("data-content", tabName)).shouldBe(visible);
     }
+
+
 }
