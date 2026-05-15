@@ -25,6 +25,17 @@ test {
     useJUnitPlatform()
 }
 
+tasks.withType(JavaExec) {
+    systemProperty "file.encoding", "UTF-8"
+}
+
+tasks.withType(Test) {
+    systemProperty "file.encoding", "UTF-8"
+}
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
 allure {
     version = '2.27.0'
     adapter {

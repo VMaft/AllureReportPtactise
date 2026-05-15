@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import test.extension.TestLogExtension;
 
+import java.util.Objects;
+
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.attachment;
 import static io.qameta.allure.Allure.step;
@@ -34,7 +36,7 @@ public class GitHubSearchRepoAttachmentsSteps extends GitHUBTestConfiguration {
         step("Открываем главную страницу GitHub.", () -> {
             open(URL);
         });
-        attachment("Source", webdriver().driver().source());
+        attachment("Source", Objects.requireNonNull(webdriver().driver().source()));
     }
 
     @Epic("Аттачменты с WebSteps")
